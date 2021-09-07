@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-1: #184e77;
+  --color-2: #1e6091;
+  --color-3: #1a759f;
+  --color-4: #168aad;
+  --color-5: #34a0a4;
+  --color-6: #52b69a;
+  --color-7: #76c893;
+  --color-8: #99d98c;
+  --color-9: #b5e48c;
+  --color-10: #d9ed92;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--color-3);
+  background: linear-gradient(
+    151deg,
+    var(--color-5) 0%,
+    var(--color-7) 52%,
+    var(--color-9) 100%
+  );
+}
+.container {
+  max-width: 960px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.calendar {
+  width: 100%;
+  background-color: var(--color-2);
+  border-radius: 0.3rem;
+  overflow: hidden;
+  color: var(--color-10);
+}
+.calendar header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+  font-weight: bold;
+}
+.calendar header .mes {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.calendar header .arrows {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 1rem);
+  font-size: 2rem;
+}
+.calendar header .arrows i {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+.calendar header .arrows i:hover {
+  opacity: 1;
+}
+.calendar header .arrows .fa-chevron-right {
+  position: absolute;
+  right: 1rem;
+}
+.calendar header .arrows .fa-chevron-left {
+  position: absolute;
+  left: 1rem;
+}
+.calendar main {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-3);
+}
+.calendar main .days {
+  font-weight: bold;
+  color: var(--color-10);
+}
+.calendar main .days div,
+.calendar main .dates div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.calendar main .days,
+.calendar main .dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar main .dates .prev-date,
+.calendar main .dates .next-date {
+  color: var(--color-5);
+}
+.today {
+  font-weight: bold;
+  border: solid 2px var(--color-8);
+  border-radius: 50%;
+}
